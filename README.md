@@ -1,4 +1,4 @@
-# flutter_bmi_calculator
+# Basic BMI Calculator
 
 A BMI Calculator. Using themes and custom widgets.
 
