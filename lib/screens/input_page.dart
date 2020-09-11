@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_bmi_calculator/constants.dart';
 import 'package:flutter_bmi_calculator/components/reusable_card.dart';
 import 'package:flutter_bmi_calculator/components/icon_gender.dart';
@@ -14,6 +13,8 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  Gender _selectedGender = Gender.female;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,19 +29,27 @@ class _InputPageState extends State<InputPage> {
 //              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 ReusableCard(
-                  colour: kActiveCardColor,
+                  onClick: () {
+                    setState(() {
+                      _selectedGender = Gender.male;
+                    });
+                  },
+                  active: _selectedGender == Gender.male,
                   child: IconGender(
-                    icon: FontAwesomeIcons.mars,
-                    label: 'MALE',
-                    color: kSelectedPinkColor, //0xFFFF4F80
+                    gender: Gender.male,
+                    active: (_selectedGender == Gender.male),
                   ),
                 ),
                 ReusableCard(
-                  colour: kInactiveCardColor,
+                  onClick: () {
+                    setState(() {
+                      _selectedGender = Gender.female;
+                    });
+                  },
+                  active: _selectedGender == Gender.female,
                   child: IconGender(
-                    icon: FontAwesomeIcons.venus,
-                    label: 'FEMALE',
-                  ),
+                      gender: Gender.female,
+                      active: (_selectedGender == Gender.female)),
                 ),
               ],
             ),
