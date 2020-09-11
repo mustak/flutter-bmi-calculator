@@ -62,7 +62,7 @@ class _InputPageState extends State<InputPage> {
             decoration: BoxDecoration(
               color: kMainPinkColor,
               borderRadius: BorderRadius.vertical(
-                bottom: Radius.circular(15),
+                bottom: Radius.circular(kBorderRadius),
               ),
             ),
           )

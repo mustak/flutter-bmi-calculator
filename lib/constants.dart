@@ -8,3 +8,5 @@ const kMainPinkColor = Color(0xFFEB1555);
 const kSelectedPinkColor = Color(0xFFe06483);
 
 const kDefaultGenderIconColor = Color(0xFF81819b);
+
+const kBorderRadius = 15.0;
