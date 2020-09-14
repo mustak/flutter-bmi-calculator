@@ -13,7 +13,7 @@ class IconGender extends StatelessWidget {
     IconData faIcon = this.gender == Gender.male
         ? FontAwesomeIcons.mars
         : FontAwesomeIcons.venus;
-    Color clr = this.active ? kSelectedValue : kDefaultValue;
+    Color clr = this.active ? kValueSelected : kValueDefault;
     String label = this.gender == Gender.male ? 'MALE' : 'FEMALE';
 
     return Column(

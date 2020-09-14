@@ -6,14 +6,14 @@ const kBottomContainerHeight = 80.0;
 
 const kMainPinkColor = Color(0xFFEB1555);
 
-const kSelectedValue = Color(0xFFe06483);
-const kDefaultValue = Color(0xFF81819b);
+const kValueSelected = Color(0xFFe06483);
+const kValueDefault = Color(0xFFbcbcd8);
 
 TextStyle kLabelStyle(clr) {
   return TextStyle(
     color: clr.withAlpha(clr.alpha - 100),
     fontSize: 18,
-    letterSpacing: 1,
+    letterSpacing: 3,
   );
 }
 
