@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bmi_calculator/constants.dart';
 import 'package:flutter_bmi_calculator/components/reusable_card.dart';
-import 'package:flutter_bmi_calculator/components/icon_gender.dart';
+import 'package:flutter_bmi_calculator/components/gender_icon.dart';
 
 class InputPage extends StatefulWidget {
   InputPage({Key key, this.title}) : super(key: key);
@@ -14,6 +14,7 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender _selectedGender = Gender.female;
+  int _height = 180;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,7 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     active: _selectedGender == Gender.male,
-                    child: IconGender(
+                    child: GenderIcon(
                       gender: Gender.male,
                       active: (_selectedGender == Gender.male),
                     ),
@@ -50,7 +51,7 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     active: _selectedGender == Gender.female,
-                    child: IconGender(
+                    child: GenderIcon(
                       gender: Gender.female,
                       active: (_selectedGender == Gender.female),
                     ),
@@ -62,6 +63,49 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: ReusableCard(
               active: true,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'HEIGHT',
+                    style: kLabelStyle(kValueDefault),
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
+                      Text(
+                        _height.toString(),
+                        style: TextStyle(
+                          color: kValueDefault,
+                          fontSize: 30,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                      Text(
+                        'cm',
+                        style: TextStyle(
+                          color: kValueDefault,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Slider(
+                    value: _height.toDouble(),
+                    onChanged: (newValue) {
+                      setState(() {
+                        _height = newValue.toInt();
+                      });
+                    },
+                    min: 110,
+                    max: 220,
+                    activeColor: kValueSelected,
+                    inactiveColor: kValueDefault,
+                  )
+                ],
+              ),
             ),
           ),
           Expanded(

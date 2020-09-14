@@ -20,3 +20,6 @@ TextStyle kLabelStyle(clr) {
 const kBorderRadius = 15.0;
 
 enum Gender { male, female }
+
+//Gender related
+const double kIconSize = 60;

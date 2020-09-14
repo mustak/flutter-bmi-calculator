@@ -21,7 +21,7 @@ class GenderIcon extends StatelessWidget {
       children: [
         FaIcon(
           faIcon,
-          size: 60,
+          size: kIconSize,
           color: clr,
         ),
         const SizedBox(height: 10),
