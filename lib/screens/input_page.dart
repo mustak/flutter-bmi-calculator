@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bmi_calculator/constants.dart';
 import 'package:flutter_bmi_calculator/components/reusable_card.dart';
 import 'package:flutter_bmi_calculator/components/gender_icon.dart';
+import 'package:flutter_bmi_calculator/components/height_input.dart';
 
 class InputPage extends StatefulWidget {
   InputPage({Key key, this.title}) : super(key: key);
@@ -63,48 +64,12 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: ReusableCard(
               active: true,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'HEIGHT',
-                    style: kLabelStyle(kValueDefault),
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.baseline,
-                    textBaseline: TextBaseline.alphabetic,
-                    children: [
-                      Text(
-                        _height.toString(),
-                        style: TextStyle(
-                          color: kValueDefault,
-                          fontSize: 30,
-                          fontWeight: FontWeight.w900,
-                        ),
-                      ),
-                      Text(
-                        'cm',
-                        style: TextStyle(
-                          color: kValueDefault,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Slider(
-                    value: _height.toDouble(),
-                    onChanged: (newValue) {
-                      setState(() {
-                        _height = newValue.toInt();
-                      });
-                    },
-                    min: 110,
-                    max: 220,
-                    activeColor: kValueSelected,
-                    inactiveColor: kValueDefault,
-                  )
-                ],
+              child: HeightInput(
+                onSelected: (int newHeight) {
+                  setState(() {
+                    _height = newHeight;
+                  });
+                },
               ),
             ),
           ),
@@ -125,14 +90,19 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            height: kBottomContainerHeight,
-            //TODO: specify width: double.infinity
-            margin: EdgeInsets.fromLTRB(15, 15, 15, 0),
-            decoration: BoxDecoration(
-              color: kMainPinkColor,
-              borderRadius: BorderRadius.vertical(
-                bottom: Radius.circular(kBorderRadius),
+          GestureDetector(
+            onTap: () {
+              print(_height);
+            },
+            child: Container(
+              height: kBottomContainerHeight,
+              //TODO: specify width: double.infinity
+              margin: EdgeInsets.fromLTRB(15, 15, 15, 0),
+              decoration: BoxDecoration(
+                color: kMainPinkColor,
+                borderRadius: BorderRadius.vertical(
+                  bottom: Radius.circular(kBorderRadius),
+                ),
               ),
             ),
           )

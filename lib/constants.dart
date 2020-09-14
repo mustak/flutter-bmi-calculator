@@ -23,3 +23,15 @@ enum Gender { male, female }
 
 //Gender related
 const double kIconSize = 60;
+
+//Height Related
+const int kDefaultHeight = 180;
+const kValueStyle = TextStyle(
+  color: kValueDefault,
+  fontSize: 40,
+  fontWeight: FontWeight.w900,
+);
+const kUnitStyle = TextStyle(
+  color: kValueDefault,
+  fontSize: 20,
+);
