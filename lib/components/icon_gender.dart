@@ -13,7 +13,7 @@ class IconGender extends StatelessWidget {
     IconData faIcon = this.gender == Gender.male
         ? FontAwesomeIcons.mars
         : FontAwesomeIcons.venus;
-    Color clr = this.active ? kSelectedPinkColor : kDefaultGenderIconColor;
+    Color clr = this.active ? kSelectedValue : kDefaultValue;
     String label = this.gender == Gender.male ? 'MALE' : 'FEMALE';
 
     return Column(
@@ -27,11 +27,7 @@ class IconGender extends StatelessWidget {
         const SizedBox(height: 10),
         Text(
           label,
-          style: TextStyle(
-            color: clr.withAlpha(clr.alpha - 100),
-            fontSize: 18,
-            letterSpacing: 1,
-          ),
+          style: kLabelStyle(clr),
         )
       ],
     );

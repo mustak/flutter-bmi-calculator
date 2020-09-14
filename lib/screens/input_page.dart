@@ -28,39 +28,56 @@ class _InputPageState extends State<InputPage> {
             child: Row(
 //              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                ReusableCard(
-                  onClick: () {
-                    setState(() {
-                      _selectedGender = Gender.male;
-                    });
-                  },
-                  active: _selectedGender == Gender.male,
-                  child: IconGender(
-                    gender: Gender.male,
-                    active: (_selectedGender == Gender.male),
+                Expanded(
+                  child: ReusableCard(
+                    onClick: () {
+                      setState(() {
+                        _selectedGender = Gender.male;
+                      });
+                    },
+                    active: _selectedGender == Gender.male,
+                    child: IconGender(
+                      gender: Gender.male,
+                      active: (_selectedGender == Gender.male),
+                    ),
                   ),
                 ),
-                ReusableCard(
-                  onClick: () {
-                    setState(() {
-                      _selectedGender = Gender.female;
-                    });
-                  },
-                  active: _selectedGender == Gender.female,
-                  child: IconGender(
+                Expanded(
+                  child: ReusableCard(
+                    onClick: () {
+                      setState(() {
+                        _selectedGender = Gender.female;
+                      });
+                    },
+                    active: _selectedGender == Gender.female,
+                    child: IconGender(
                       gender: Gender.female,
-                      active: (_selectedGender == Gender.female)),
+                      active: (_selectedGender == Gender.female),
+                    ),
+                  ),
                 ),
               ],
             ),
           ),
-          ReusableCard(),
+          Expanded(
+            child: ReusableCard(
+              active: true,
+            ),
+          ),
           Expanded(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                ReusableCard(),
-                ReusableCard(),
+                Expanded(
+                  child: ReusableCard(
+                    active: true,
+                  ),
+                ),
+                Expanded(
+                  child: ReusableCard(
+                    active: true,
+                  ),
+                ),
               ],
             ),
           ),
