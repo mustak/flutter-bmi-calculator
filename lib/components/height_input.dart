@@ -50,10 +50,11 @@ class _HeightInputState extends State<HeightInput> {
           onChangeEnd: (newValue) {
             widget.onSelected(newValue.toInt());
           },
+          //TODO: Move min/max to constants
           min: 110,
           max: 220,
-          activeColor: kValueSelected,
-          inactiveColor: kValueDefault,
+//          activeColor: kValueSelected,
+//          inactiveColor: kValueDefault,
         )
       ],
     );
