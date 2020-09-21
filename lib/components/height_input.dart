@@ -17,7 +17,7 @@ class _HeightInputState extends State<HeightInput> {
   Widget build(BuildContext context) {
     Brightness lTheme = Theme.of(context).brightness;
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.end,
       children: [
 //        SizedBox(
 //          height: 10,
