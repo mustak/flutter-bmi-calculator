@@ -15,6 +15,7 @@ class _HeightInputState extends State<HeightInput> {
 
   @override
   Widget build(BuildContext context) {
+    Brightness lTheme = Theme.of(context).brightness;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -23,7 +24,7 @@ class _HeightInputState extends State<HeightInput> {
 //        ),
         Text(
           'HEIGHT',
-          style: kLabelStyle(kValueDefault),
+          style: kLabelStyle(kLValueDefault),
         ),
         Row(
           mainAxisSize: MainAxisSize.min,
@@ -32,11 +33,14 @@ class _HeightInputState extends State<HeightInput> {
           children: [
             Text(
               _height.toString(),
-              style: kValueStyle,
+              style: lTheme == Brightness.dark ? kDValueStyle : kLValueStyle,
+            ),
+            SizedBox(
+              width: 4,
             ),
             Text(
               'cm',
-              style: kUnitStyle,
+              style: lTheme == Brightness.dark ? kDUnitStyle : kLUnitStyle,
             ),
           ],
         ),

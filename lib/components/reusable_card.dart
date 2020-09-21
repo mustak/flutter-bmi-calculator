@@ -11,13 +11,20 @@ class ReusableCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color clr;
+    if (Theme.of(context).brightness == Brightness.dark) {
+      clr = this.active ? kDActiveCardColor : kDInactiveCardColor;
+    } else {
+      clr = Color(0xFFdee2ea);
+    }
+
     return GestureDetector(
       onTap: this.onClick,
       child: Container(
         margin: const EdgeInsets.all(10),
         child: this.child,
         decoration: BoxDecoration(
-          color: this.active ? kActiveCardColor : kInactiveCardColor,
+          color: clr,
           borderRadius: BorderRadius.circular(kBorderRadius),
         ),
       ),
