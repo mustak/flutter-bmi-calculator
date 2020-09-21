@@ -30,8 +30,8 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       darkTheme: ThemeData.dark().copyWith(
-        primaryColor: Color(0xFF0A0E21), //0xFF0A0E21
-        scaffoldBackgroundColor: Color(0xFF04040C),
+        primaryColor: Color(0xFF111539), //0xFF0A0E21
+        scaffoldBackgroundColor: Color(0xFF0B1033),
         sliderTheme: SliderTheme.of(context).copyWith(
           activeTrackColor: kDValueSelected,
           inactiveTrackColor: kDValueDefault,

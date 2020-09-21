@@ -22,12 +22,10 @@ class _InputPageState extends State<InputPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        elevation: 0,
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 15,
-          horizontal: 10,
-        ),
+        padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
@@ -102,12 +100,12 @@ class _InputPageState extends State<InputPage> {
               child: Container(
                 height: kBottomContainerHeight,
                 //TODO: specify width: double.infinity
-                margin: EdgeInsets.fromLTRB(15, 15, 15, 0),
+                margin: EdgeInsets.fromLTRB(0, 15, 0, 0),
                 decoration: BoxDecoration(
                   color: kMainPinkColor,
-                  borderRadius: BorderRadius.vertical(
-                    bottom: Radius.circular(kBorderRadius),
-                  ),
+                  // borderRadius: BorderRadius.vertical(
+                  //   bottom: Radius.circular(kBorderRadius),
+                  // ),
                 ),
               ),
             )

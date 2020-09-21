@@ -24,7 +24,8 @@ class _HeightInputState extends State<HeightInput> {
 //        ),
         Text(
           'HEIGHT',
-          style: kLabelStyle(kLValueDefault),
+          style: kLabelStyle(
+              lTheme == Brightness.dark ? kDValueDefault : kLValueDefault),
         ),
         Row(
           mainAxisSize: MainAxisSize.min,

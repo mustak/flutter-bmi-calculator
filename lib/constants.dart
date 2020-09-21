@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 ///
 /// Card colors
 ///
-const kDInactiveCardColor = Color(0xFF111328);
-const kDActiveCardColor = Color(0xFF1D1E33);
+const kDActiveCardColor = Color(0xFF272A4C);
+const kDInactiveCardColor = Color(0xFF14193B);
 
 ///
 /// LAbel and value colours
@@ -28,7 +28,7 @@ const kBorderRadius = 15.0;
 enum Gender { male, female }
 
 const kBottomContainerHeight = 80.0;
-const kMainPinkColor = Color(0xFFEB1555);
+const kMainPinkColor = Color(0xFFFF0066);
 
 //Gender related
 const double kIconSize = 60;
