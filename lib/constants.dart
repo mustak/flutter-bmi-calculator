@@ -35,6 +35,8 @@ const double kIconSize = 60;
 
 //Height Related
 const int kDefaultHeight = 180;
+const double kMinHeight = 110;
+const double kMaxHeight = 240;
 const kDValueStyle = TextStyle(
   color: kDValueDefault,
   fontSize: 40,
