@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 ///
-/// Card colors
+/// CARD RELATED
 ///
 const kDActiveCardColor = Color(0xFF272A4C);
 const kDInactiveCardColor = Color(0xFF14193B);
 
 ///
-/// LAbel and value colours
+/// LABEL & VALUE STYLES
 ///
 const kDValueSelected = Color(0xFFe06483);
 const kDValueDefault = Color(0xFFbcbcd8);
@@ -16,7 +16,7 @@ const kLValueDefault = Color(0xFF4643a0);
 
 TextStyle kLabelStyle(clr) {
   return TextStyle(
-    color: clr.withAlpha(clr.alpha - 80),
+    color: clr.withAlpha(clr.alpha - 20),
     fontSize: 18,
     fontWeight: FontWeight.w700,
     letterSpacing: 3,
@@ -25,15 +25,18 @@ TextStyle kLabelStyle(clr) {
 
 const kBorderRadius = 15.0;
 
-enum Gender { male, female }
-
 const kBottomContainerHeight = 80.0;
 const kMainPinkColor = Color(0xFFFF0066);
 
-//Gender related
+///
+///GENDER RELATED
+///
 const double kIconSize = 60;
+enum Gender { male, female }
 
-//Height Related
+///
+///HEIGHT RELATED
+///
 const int kDefaultHeight = 180;
 const double kMinHeight = 110;
 const double kMaxHeight = 240;
@@ -55,3 +58,8 @@ const kLUnitStyle = TextStyle(
   color: kLValueDefault,
   fontSize: 20,
 );
+
+///
+/// WEIGHT RELATED
+///
+const int kDefaultWeight = 60;

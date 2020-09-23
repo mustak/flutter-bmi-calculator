@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_bmi_calculator/constants.dart';
+import 'package:flutter_bmi_calculator/components/value_component.dart';
 
 class HeightInput extends StatefulWidget {
   final Function onSelected;
@@ -27,23 +27,9 @@ class _HeightInputState extends State<HeightInput> {
           style: kLabelStyle(
               lTheme == Brightness.dark ? kDValueDefault : kLValueDefault),
         ),
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.baseline,
-          textBaseline: TextBaseline.alphabetic,
-          children: [
-            Text(
-              _height.toString(),
-              style: lTheme == Brightness.dark ? kDValueStyle : kLValueStyle,
-            ),
-            SizedBox(
-              width: 4,
-            ),
-            Text(
-              'cm',
-              style: lTheme == Brightness.dark ? kDUnitStyle : kLUnitStyle,
-            ),
-          ],
+        ValueComponent(
+          label: 'cm',
+          value: _height,
         ),
         Slider(
           value: _height.toDouble(),
@@ -57,8 +43,6 @@ class _HeightInputState extends State<HeightInput> {
           },
           min: kMinHeight,
           max: kMaxHeight,
-//          activeColor: kValueSelected,
-//          inactiveColor: kValueDefault,
         )
       ],
     );
