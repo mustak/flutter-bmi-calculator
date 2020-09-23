@@ -15,7 +15,7 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Gender _selectedGender = Gender.female;
+  Gender _gender = Gender.female;
   int _height = kDefaultHeight;
   int _weight = kDefaultWeight;
 
@@ -39,13 +39,13 @@ class _InputPageState extends State<InputPage> {
                     child: ReusableCard(
                       onClick: () {
                         setState(() {
-                          _selectedGender = Gender.male;
+                          _gender = Gender.male;
                         });
                       },
-                      active: _selectedGender == Gender.male,
+                      active: _gender == Gender.male,
                       child: GenderIcon(
                         gender: Gender.male,
-                        active: (_selectedGender == Gender.male),
+                        active: (_gender == Gender.male),
                       ),
                     ),
                   ),
@@ -53,13 +53,13 @@ class _InputPageState extends State<InputPage> {
                     child: ReusableCard(
                       onClick: () {
                         setState(() {
-                          _selectedGender = Gender.female;
+                          _gender = Gender.female;
                         });
                       },
-                      active: _selectedGender == Gender.female,
+                      active: _gender == Gender.female,
                       child: GenderIcon(
                         gender: Gender.female,
-                        active: (_selectedGender == Gender.female),
+                        active: (_gender == Gender.female),
                       ),
                     ),
                   ),
