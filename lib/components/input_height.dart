@@ -1,36 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bmi_calculator/constants.dart';
-import 'package:flutter_bmi_calculator/components/value_component.dart';
+import 'package:flutter_bmi_calculator/base/value_component.dart';
+import 'package:flutter_bmi_calculator/base/label_component.dart';
 
-class HeightInput extends StatefulWidget {
+class InputHeight extends StatefulWidget {
   final Function onSelected;
 
-  HeightInput({this.onSelected});
+  InputHeight({this.onSelected});
   @override
-  _HeightInputState createState() => _HeightInputState();
+  _InputHeightState createState() => _InputHeightState();
 }
 
-class _HeightInputState extends State<HeightInput> {
+class _InputHeightState extends State<InputHeight> {
   int _height = kDefaultHeight;
 
   @override
   Widget build(BuildContext context) {
-    Brightness lTheme = Theme.of(context).brightness;
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
 //        SizedBox(
 //          height: 10,
 //        ),
-        Text(
-          'HEIGHT',
-          style: kLabelStyle(
-              lTheme == Brightness.dark ? kDValueDefault : kLValueDefault),
-        ),
-        ValueComponent(
-          label: 'cm',
-          value: _height,
-        ),
+        LabelComponent(label: 'HEIGHT'),
+        ValueComponent(label: 'cm', value: _height),
         Slider(
           value: _height.toDouble(),
           onChanged: (newValue) {

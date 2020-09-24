@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_bmi_calculator/constants.dart';
 
-class GenderIcon extends StatelessWidget {
+class InputGender extends StatelessWidget {
   final Gender gender;
   final bool active;
 
-  const GenderIcon({@required this.gender, this.active});
+  const InputGender({@required this.gender, this.active});
 
   @override
   Widget build(BuildContext context) {

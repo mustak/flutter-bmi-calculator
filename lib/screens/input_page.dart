@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bmi_calculator/constants.dart';
 import 'package:flutter_bmi_calculator/components/reusable_card.dart';
-import 'package:flutter_bmi_calculator/components/gender_icon.dart';
-import 'package:flutter_bmi_calculator/components/height_input.dart';
-import 'package:flutter_bmi_calculator/components/weight_input.dart';
+import 'package:flutter_bmi_calculator/components/input_gender.dart';
+import 'package:flutter_bmi_calculator/components/input_height.dart';
+import 'package:flutter_bmi_calculator/components/input_weight.dart';
 
 class InputPage extends StatefulWidget {
   InputPage({Key key, this.title}) : super(key: key);
@@ -43,7 +43,7 @@ class _InputPageState extends State<InputPage> {
                         });
                       },
                       active: _gender == Gender.male,
-                      child: GenderIcon(
+                      child: InputGender(
                         gender: Gender.male,
                         active: (_gender == Gender.male),
                       ),
@@ -57,7 +57,7 @@ class _InputPageState extends State<InputPage> {
                         });
                       },
                       active: _gender == Gender.female,
-                      child: GenderIcon(
+                      child: InputGender(
                         gender: Gender.female,
                         active: (_gender == Gender.female),
                       ),
@@ -69,7 +69,7 @@ class _InputPageState extends State<InputPage> {
             Expanded(
               child: ReusableCard(
                 active: true,
-                child: HeightInput(
+                child: InputHeight(
                   onSelected: (int newHeight) {
                     setState(() {
                       _height = newHeight;
@@ -85,7 +85,7 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: ReusableCard(
                       active: true,
-                      child: WeightInput(
+                      child: InputWeight(
                         updateWeight: (newWeight) {
                           _weight = newWeight;
                         },
