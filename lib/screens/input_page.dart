@@ -3,7 +3,7 @@ import 'package:flutter_bmi_calculator/constants.dart';
 import 'package:flutter_bmi_calculator/components/reusable_card.dart';
 import 'package:flutter_bmi_calculator/components/input_gender.dart';
 import 'package:flutter_bmi_calculator/components/input_height.dart';
-import 'package:flutter_bmi_calculator/components/input_weight.dart';
+import 'package:flutter_bmi_calculator/components/counter_widget.dart';
 
 class InputPage extends StatefulWidget {
   InputPage({Key key, this.title}) : super(key: key);
@@ -18,6 +18,7 @@ class _InputPageState extends State<InputPage> {
   Gender _gender = Gender.female;
   int _height = kDefaultHeight;
   int _weight = kDefaultWeight;
+  int _age = kDefaultAge;
 
   @override
   Widget build(BuildContext context) {
@@ -85,16 +86,27 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: ReusableCard(
                       active: true,
-                      child: InputWeight(
-                        updateWeight: (newWeight) {
+                      child: CounterWidget(
+                        updateValue: (newWeight) {
                           _weight = newWeight;
                         },
+                        label: 'WEIGHT',
+                        defaultValue: kDefaultWeight,
+                        unit: 'kg',
                       ),
                     ),
                   ),
                   Expanded(
                     child: ReusableCard(
                       active: true,
+                      child: CounterWidget(
+                        updateValue: (newAge) {
+                          _age = newAge;
+                        },
+                        label: 'AGE',
+                        defaultValue: kDefaultAge,
+                        unit: 'yrs',
+                      ),
                     ),
                   ),
                 ],

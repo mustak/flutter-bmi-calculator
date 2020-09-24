@@ -5,25 +5,36 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_bmi_calculator/base/value_component.dart';
 import 'package:flutter_bmi_calculator/base/label_component.dart';
 
-class InputWeight extends StatefulWidget {
-  final Function updateWeight;
+class CounterWidget extends StatefulWidget {
+  final int defaultValue;
+  final String label;
+  final String unit;
+  final Function updateValue;
 
-  InputWeight({this.updateWeight});
+  CounterWidget({this.defaultValue, this.label, this.unit, this.updateValue});
 
   @override
-  _InputWeightState createState() => _InputWeightState();
+  _CounterWidgetState createState() => _CounterWidgetState();
 }
 
-class _InputWeightState extends State<InputWeight> {
-  int _weight = kDefaultWeight;
+class _CounterWidgetState extends State<CounterWidget> {
+  int _value; // = kDefaultWeight;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _value = widget.defaultValue;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        LabelComponent(label: 'WEIGHT'),
-        ValueComponent(value: _weight, label: 'kg'),
+        LabelComponent(label: widget.label),
+        ValueComponent(value: _value, label: widget.unit),
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -31,9 +42,9 @@ class _InputWeightState extends State<InputWeight> {
               icon: FontAwesomeIcons.minus,
               onPressed: () {
                 setState(() {
-                  _weight--;
+                  _value--;
                 });
-                widget.updateWeight(_weight);
+                widget.updateValue(_value);
               },
             ),
             SizedBox(
@@ -43,9 +54,9 @@ class _InputWeightState extends State<InputWeight> {
               icon: FontAwesomeIcons.plus,
               onPressed: () {
                 setState(() {
-                  _weight++;
+                  _value++;
                 });
-                widget.updateWeight(_weight);
+                widget.updateValue(_value);
               },
             ),
           ],

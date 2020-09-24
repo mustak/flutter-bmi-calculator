@@ -24,13 +24,15 @@ class ButtonIcon extends StatelessWidget {
         ),
       ),
       constraints: BoxConstraints(
-        minHeight: 45,
-        minWidth: 45,
+        minHeight: 40,
+        minWidth: 40,
       ),
       child: Icon(
         this.icon,
         color: Colors.white,
+        size: 20,
       ),
+      splashColor: kDValueSelected,
     );
   }
 }

@@ -63,3 +63,8 @@ const kLUnitStyle = TextStyle(
 /// WEIGHT RELATED
 ///
 const int kDefaultWeight = 60;
+
+///
+/// AGE RELATED
+///
+const int kDefaultAge = 28;
