@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bmi_calculator/constants.dart';
 import 'package:flutter_bmi_calculator/base/button_icon.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_bmi_calculator/base/value_component.dart';
