@@ -2,19 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bmi_calculator/constants.dart';
 import 'package:flutter_bmi_calculator/components/reusable_card.dart';
 import 'package:flutter_bmi_calculator/base/cto_button.dart';
-import 'package:flutter_bmi_calculator/bmi_calculator.dart';
 
 class ResultPage extends StatelessWidget {
-  final int weight;
-  final int height;
-  final int age;
-  final Gender gender;
+  final String bmi;
+  final String result;
+  final String interpretation;
+  final Color color;
 
-  ResultPage({this.weight, this.height, this.age, this.gender});
+  ResultPage({this.bmi, this.result, this.interpretation, this.color});
   @override
   Widget build(BuildContext context) {
-    BMICalculator calc = BMICalculator(weight: weight, height: height);
-
     return Scaffold(
       appBar: AppBar(
         title: Text('BMI CALCULATOR'),
@@ -50,21 +47,22 @@ class ResultPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
-                    calc.getResult(),
+                    result,
                     style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                        color: calc.getColor()),
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      color: color,
+                    ),
                   ),
                   Text(
-                    calc.calculateBMI(),
+                    bmi,
                     style: TextStyle(
                       fontSize: 100,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
-                    calc.getInterpretation(),
+                    interpretation,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 22,

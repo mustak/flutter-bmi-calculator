@@ -5,6 +5,7 @@ import 'package:flutter_bmi_calculator/components/input_gender.dart';
 import 'package:flutter_bmi_calculator/components/input_height.dart';
 import 'package:flutter_bmi_calculator/components/counter_widget.dart';
 import 'package:flutter_bmi_calculator/base/cto_button.dart';
+import 'package:flutter_bmi_calculator/bmi_calculator.dart';
 import 'result_page.dart';
 
 class InputPage extends StatefulWidget {
@@ -24,6 +25,8 @@ class _InputPageState extends State<InputPage> {
 
   @override
   Widget build(BuildContext context) {
+    BMICalculator calc = BMICalculator(weight: _weight, height: _height);
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -121,10 +124,10 @@ class _InputPageState extends State<InputPage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => ResultPage(
-                      weight: _weight,
-                      height: _height,
-                      age: _age,
-                      gender: _gender,
+                      result: calc.getResult(),
+                      interpretation: calc.getInterpretation(),
+                      bmi: calc.calculateBMI(),
+                      color: calc.getColor(),
                     ),
                   ),
                 );
