@@ -120,7 +120,12 @@ class _InputPageState extends State<InputPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ResultPage(),
+                    builder: (context) => ResultPage(
+                      weight: _weight,
+                      height: _height,
+                      age: _age,
+                      gender: _gender,
+                    ),
                   ),
                 );
               },
