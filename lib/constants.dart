@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 ///
 const kDActiveCardColor = Color(0xFF272A4C);
 const kDInactiveCardColor = Color(0xFF14193B);
+const kBorderRadius = 15.0;
 
 ///
 /// LABEL & VALUE STYLES
@@ -23,10 +24,15 @@ TextStyle kLabelStyle(clr) {
   );
 }
 
-const kBorderRadius = 15.0;
-
+///
+/// Large CTO
 const kBottomContainerHeight = 80.0;
 const kMainPinkColor = Color(0xFFFF0066);
+const TextStyle kCTOStyle = TextStyle(
+  fontSize: 25,
+  fontWeight: FontWeight.bold,
+  letterSpacing: 8,
+);
 
 ///
 ///GENDER RELATED

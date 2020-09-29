@@ -4,6 +4,8 @@ import 'package:flutter_bmi_calculator/components/reusable_card.dart';
 import 'package:flutter_bmi_calculator/components/input_gender.dart';
 import 'package:flutter_bmi_calculator/components/input_height.dart';
 import 'package:flutter_bmi_calculator/components/counter_widget.dart';
+import 'package:flutter_bmi_calculator/base/cto_button.dart';
+import 'result_page.dart';
 
 class InputPage extends StatefulWidget {
   InputPage({Key key, this.title}) : super(key: key);
@@ -112,22 +114,17 @@ class _InputPageState extends State<InputPage> {
                 ],
               ),
             ),
-            GestureDetector(
-              onTap: () {
-                print(Theme.of(context).brightness);
+            CTOButton(
+              label: 'Calculate',
+              onPress: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ResultPage(),
+                  ),
+                );
               },
-              child: Container(
-                height: kBottomContainerHeight,
-                //TODO: specify width: double.infinity
-                margin: EdgeInsets.fromLTRB(0, 15, 0, 0),
-                decoration: BoxDecoration(
-                  color: kMainPinkColor,
-                  // borderRadius: BorderRadius.vertical(
-                  //   bottom: Radius.circular(kBorderRadius),
-                  // ),
-                ),
-              ),
-            )
+            ),
           ],
         ),
       ),
